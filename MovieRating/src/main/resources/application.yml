@@ -1,0 +1,9 @@
+greeting: Hello World
+
+spring:
+  cloud:
+    config:
+      uri: https://github.com/Sathya1412/MoviesMicroservicesConfig
+  application:
+    name: ratings-data-service
+

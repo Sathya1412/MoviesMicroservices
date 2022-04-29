@@ -33,6 +33,9 @@ public class CatalogController { //Catalog of movies that contains the movie's n
 //				.retrieve().bodyToMono(UserRating.class).block();
 
 		UserRating userRating = restTemplate.getForObject("http://localhost:8083/ratingsdata/user/" + userId, UserRating.class);
+
+		//Code for Docker
+//		UserRating userRating = restTemplate.getForObject("http://moviesmicroservices-client-rating-1/ratingsdata/user/" + userId, UserRating.class);
 		
 		return userRating.getRatings().stream()
                 .map(rating -> {
@@ -40,6 +43,15 @@ public class CatalogController { //Catalog of movies that contains the movie's n
                     return new CatalogItem(movie.getName(), movie.getDescription(), rating.getRating());
                 })
                 .collect(Collectors.toList());
+		
+		//Code for Docker
+//		return userRating.getRatings().stream()
+//                .map(rating -> {
+//                    Movie movie = restTemplate.getForObject("http://moviesmicroservices-client-info-1/movies/" + rating.getMovieId(), Movie.class);
+//                    return new CatalogItem(movie.getName(), movie.getDescription(), rating.getRating());
+//                })
+//                .collect(Collectors.toList());
+		
 		
 //		return userRating.getRatings().stream()
 //	                .map(rating -> {

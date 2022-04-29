@@ -1,8 +1,11 @@
 greeting: Hello World
 
 spring:
+  application:
+    name: movie-catalog-service
   cloud:
     config:
       uri: https://github.com/Sathya1412/MoviesMicroservicesConfig
-  application:
-    name: movie-catalog-service
+
+#server:
+#  port: 8081

@@ -1,13 +1,13 @@
 version: "3"
 services:
-  server:
+  server-discovery-server:
     image: discovery-server
     ports:
-      - "8888:8888"
+      - "8090:8090"
     networks:
       - movies-microservices
  
-  client-catalog:
+  client-movie-catalog:
     image: movie-catalog
     ports:
       - "8081:8081"
@@ -19,7 +19,7 @@ services:
       - client-info
       - client-rating
   
-  client-info:
+  client-movie-info:
     image: movie-info
     ports:
       - "8082:8082"
@@ -28,7 +28,7 @@ services:
     depends_on:
       - server
   
-  client-rating:
+  client-movie-rating:
     image: movie-rating
     ports:
       - "8083:8083"
@@ -39,3 +39,4 @@ services:
       
 networks:
   movies-microservices:
+    external: true

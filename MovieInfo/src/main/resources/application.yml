@@ -1,11 +1,8 @@
-greeting: Hello World
-
-spring:
-  application:
-    name: movie-info-service
-  cloud:
-    config:
-      uri: https://github.com/Sathya1412/MoviesMicroservicesConfig
-
+#greeting: Hello World
+#
+#spring:
+#  application:
+#    name: movie-info-service
+  
 #server:
 #  port: 8082
